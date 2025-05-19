@@ -1,0 +1,1198 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Wexify - Modern Brand Scaling & Management</title>\
+    <style>\
+        /* Global Styles */\
+        :root \{\
+            --primary: #0066ff;\
+            --secondary: #00c2ff;\
+            --dark: #121212;\
+            --light: #f8f9fa;\
+            --text: #333333;\
+            --transition: all 0.3s ease;\
+        \}\
+\
+        * \{\
+            margin: 0;\
+            padding: 0;\
+            box-sizing: border-box;\
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;\
+        \}\
+\
+        body \{\
+            background-color: var(--light);\
+            color: var(--text);\
+            line-height: 1.6;\
+            overflow-x: hidden;\
+        \}\
+\
+        /* Animations */\
+        @keyframes fadeIn \{\
+            from \{ opacity: 0; transform: translateY(20px); \}\
+            to \{ opacity: 1; transform: translateY(0); \}\
+        \}\
+\
+        @keyframes slideIn \{\
+            from \{ transform: translateX(-50px); opacity: 0; \}\
+            to \{ transform: translateX(0); opacity: 1; \}\
+        \}\
+\
+        @keyframes pulse \{\
+            0% \{ transform: scale(1); \}\
+            50% \{ transform: scale(1.05); \}\
+            100% \{ transform: scale(1); \}\
+        \}\
+\
+        /* Navigation */\
+        nav \{\
+            display: flex;\
+            justify-content: space-between;\
+            align-items: center;\
+            padding: 1.5rem 5%;\
+            background-color: rgba(255, 255, 255, 0.95);\
+            position: fixed;\
+            width: 100%;\
+            top: 0;\
+            z-index: 1000;\
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);\
+            transition: var(--transition);\
+        \}\
+\
+        nav.scrolled \{\
+            padding: 1rem 5%;\
+        \}\
+\
+        .logo \{\
+            font-size: 1.8rem;\
+            font-weight: 700;\
+            color: var(--primary);\
+            text-decoration: none;\
+            display: flex;\
+            align-items: center;\
+        \}\
+\
+        .logo span \{\
+            color: var(--dark);\
+        \}\
+\
+        .nav-links \{\
+            display: flex;\
+            gap: 2rem;\
+        \}\
+\
+        .nav-links a \{\
+            text-decoration: none;\
+            color: var(--text);\
+            font-weight: 500;\
+            transition: var(--transition);\
+            position: relative;\
+        \}\
+\
+        .nav-links a:hover \{\
+            color: var(--primary);\
+        \}\
+\
+        .nav-links a::after \{\
+            content: '';\
+            position: absolute;\
+            width: 0;\
+            height: 2px;\
+            bottom: -5px;\
+            left: 0;\
+            background-color: var(--primary);\
+            transition: var(--transition);\
+        \}\
+\
+        .nav-links a:hover::after \{\
+            width: 100%;\
+        \}\
+\
+        .cta-button \{\
+            background: linear-gradient(to right, var(--primary), var(--secondary));\
+            color: white;\
+            border: none;\
+            padding: 0.8rem 1.5rem;\
+            border-radius: 50px;\
+            font-weight: 600;\
+            cursor: pointer;\
+            transition: var(--transition);\
+            text-decoration: none;\
+        \}\
+\
+        .cta-button:hover \{\
+            transform: translateY(-3px);\
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.2);\
+        \}\
+\
+        .mobile-menu \{\
+            display: none;\
+            cursor: pointer;\
+        \}\
+\
+        .bar \{\
+            width: 25px;\
+            height: 3px;\
+            background-color: var(--dark);\
+            margin: 5px 0;\
+            transition: var(--transition);\
+        \}\
+\
+        /* Hero Section */\
+        .hero \{\
+            height: 100vh;\
+            display: flex;\
+            align-items: center;\
+            padding: 0 5%;\
+            background: linear-gradient(135deg, rgba(248, 249, 250, 0.9) 0%, rgba(248, 249, 250, 0.7) 100%);\
+            position: relative;\
+            overflow: hidden;\
+        \}\
+\
+        .hero::before \{\
+            content: '';\
+            position: absolute;\
+            top: -50%;\
+            right: -50%;\
+            width: 100%;\
+            height: 100%;\
+            background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);\
+            opacity: 0.1;\
+            z-index: -1;\
+        \}\
+\
+        .hero-content \{\
+            max-width: 600px;\
+            animation: fadeIn 1s ease-out;\
+        \}\
+\
+        .hero h1 \{\
+            font-size: 3.5rem;\
+            font-weight: 800;\
+            margin-bottom: 1.5rem;\
+            line-height: 1.2;\
+        \}\
+\
+        .hero p \{\
+            font-size: 1.2rem;\
+            margin-bottom: 2.5rem;\
+            color: #555;\
+        \}\
+\
+        .hero-image \{\
+            position: absolute;\
+            right: 5%;\
+            width: 45%;\
+            max-width: 600px;\
+            animation: slideIn 1s ease-out;\
+        \}\
+\
+        .hero-shape \{\
+            position: absolute;\
+            bottom: -100px;\
+            left: -100px;\
+            width: 300px;\
+            height: 300px;\
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);\
+            border-radius: 50%;\
+            z-index: -1;\
+            opacity: 0.1;\
+        \}\
+\
+        /* Services Section */\
+        .services \{\
+            padding: 8rem 5%;\
+            background-color: white;\
+        \}\
+\
+        .section-header \{\
+            text-align: center;\
+            margin-bottom: 5rem;\
+        \}\
+\
+        .section-header h2 \{\
+            font-size: 2.5rem;\
+            font-weight: 700;\
+            margin-bottom: 1rem;\
+            position: relative;\
+            display: inline-block;\
+        \}\
+\
+        .section-header h2::after \{\
+            content: '';\
+            position: absolute;\
+            bottom: -10px;\
+            left: 50%;\
+            transform: translateX(-50%);\
+            width: 80px;\
+            height: 3px;\
+            background: linear-gradient(to right, var(--primary), var(--secondary));\
+        \}\
+\
+        .section-header p \{\
+            max-width: 700px;\
+            margin: 0 auto;\
+            color: #666;\
+        \}\
+\
+        .services-grid \{\
+            display: grid;\
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\
+            gap: 2rem;\
+        \}\
+\
+        .service-card \{\
+            background-color: white;\
+            border-radius: 10px;\
+            padding: 2.5rem;\
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);\
+            transition: var(--transition);\
+            position: relative;\
+            overflow: hidden;\
+            z-index: 1;\
+        \}\
+\
+        .service-card:hover \{\
+            transform: translateY(-10px);\
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);\
+        \}\
+\
+        .service-card::before \{\
+            content: '';\
+            position: absolute;\
+            top: 0;\
+            left: 0;\
+            width: 5px;\
+            height: 0;\
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));\
+            transition: var(--transition);\
+            z-index: -1;\
+        \}\
+\
+        .service-card:hover::before \{\
+            height: 100%;\
+        \}\
+\
+        .service-icon \{\
+            font-size: 2.5rem;\
+            color: var(--primary);\
+            margin-bottom: 1.5rem;\
+        \}\
+\
+        .service-card h3 \{\
+            margin-bottom: 1rem;\
+            font-size: 1.5rem;\
+        \}\
+\
+        .service-card p \{\
+            color: #666;\
+            margin-bottom: 1.5rem;\
+        \}\
+\
+        .learn-more \{\
+            color: var(--primary);\
+            text-decoration: none;\
+            font-weight: 600;\
+            display: inline-flex;\
+            align-items: center;\
+            transition: var(--transition);\
+        \}\
+\
+        .learn-more:hover \{\
+            transform: translateX(5px);\
+        \}\
+\
+        .learn-more span \{\
+            margin-left: 5px;\
+            transition: var(--transition);\
+        \}\
+\
+        .learn-more:hover span \{\
+            margin-left: 10px;\
+        \}\
+\
+        /* Pricing Plans */\
+        .pricing \{\
+            padding: 8rem 5%;\
+            background-color: var(--light);\
+            position: relative;\
+            overflow: hidden;\
+        \}\
+\
+        .pricing::before \{\
+            content: '';\
+            position: absolute;\
+            top: 0;\
+            right: 0;\
+            width: 300px;\
+            height: 300px;\
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);\
+            opacity: 0.05;\
+            z-index: 0;\
+        \}\
+\
+        .pricing-tabs \{\
+            display: flex;\
+            justify-content: center;\
+            margin-bottom: 3rem;\
+        \}\
+\
+        .pricing-tab \{\
+            padding: 0.5rem 1.5rem;\
+            border: none;\
+            background: none;\
+            font-weight: 600;\
+            color: #888;\
+            cursor: pointer;\
+            transition: var(--transition);\
+            position: relative;\
+        \}\
+\
+        .pricing-tab.active \{\
+            color: var(--primary);\
+        \}\
+\
+        .pricing-tab.active::after \{\
+            content: '';\
+            position: absolute;\
+            bottom: -5px;\
+            left: 50%;\
+            transform: translateX(-50%);\
+            width: 30px;\
+            height: 3px;\
+            background: linear-gradient(to right, var(--primary), var(--secondary));\
+        \}\
+\
+        .pricing-plans \{\
+            display: grid;\
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\
+            gap: 2rem;\
+            position: relative;\
+            z-index: 1;\
+        \}\
+\
+        .plan-card \{\
+            background-color: white;\
+            border-radius: 10px;\
+            padding: 3rem 2rem;\
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);\
+            transition: var(--transition);\
+            text-align: center;\
+            position: relative;\
+            overflow: hidden;\
+        \}\
+\
+        .plan-card:hover \{\
+            transform: translateY(-10px);\
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);\
+        \}\
+\
+        .popular-badge \{\
+            position: absolute;\
+            top: 20px;\
+            right: -30px;\
+            background: linear-gradient(to right, var(--primary), var(--secondary));\
+            color: white;\
+            padding: 0.5rem 3rem;\
+            transform: rotate(45deg);\
+            font-size: 0.8rem;\
+            font-weight: 600;\
+        \}\
+\
+        .plan-name \{\
+            font-size: 1.5rem;\
+            font-weight: 700;\
+            margin-bottom: 1rem;\
+        \}\
+\
+        .plan-price \{\
+            font-size: 1.2rem;\
+            color: #666;\
+            margin-bottom: 2rem;\
+        \}\
+\
+        .plan-features \{\
+            list-style: none;\
+            margin-bottom: 2rem;\
+            min-height: 200px;\
+        \}\
+\
+        .plan-features li \{\
+            margin-bottom: 1rem;\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+        \}\
+\
+        .check-icon \{\
+            margin-right: 0.5rem;\
+            color: var(--primary);\
+            font-weight: bold;\
+        \}\
+\
+        .x-icon \{\
+            margin-right: 0.5rem;\
+            color: #ccc;\
+            font-weight: bold;\
+        \}\
+\
+        .select-plan \{\
+            display: inline-block;\
+            padding: 0.8rem 2rem;\
+            border-radius: 50px;\
+            border: 2px solid var(--primary);\
+            color: var(--primary);\
+            font-weight: 600;\
+            transition: var(--transition);\
+            text-decoration: none;\
+            background: transparent;\
+            cursor: pointer;\
+        \}\
+\
+        .select-plan:hover \{\
+            background: linear-gradient(to right, var(--primary), var(--secondary));\
+            color: white;\
+        \}\
+\
+        .premium-plan \{\
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.03) 0%, rgba(0, 194, 255, 0.03) 100%);\
+            border: 2px solid transparent;\
+            background-clip: padding-box;\
+            position: relative;\
+        \}\
+\
+        .premium-plan::before \{\
+            content: '';\
+            position: absolute;\
+            top: -2px;\
+            left: -2px;\
+            right: -2px;\
+            bottom: -2px;\
+            background: linear-gradient(to right, var(--primary), var(--secondary));\
+            z-index: -1;\
+            border-radius: 12px;\
+        \}\
+\
+        .premium-plan .select-plan \{\
+            background: linear-gradient(to right, var(--primary), var(--secondary));\
+            color: white;\
+            border: none;\
+        \}\
+\
+        .premium-plan .select-plan:hover \{\
+            transform: translateY(-3px);\
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.2);\
+        \}\
+\
+        /* Testimonials */\
+        .testimonials \{\
+            padding: 8rem 5%;\
+            background-color: white;\
+        \}\
+\
+        .testimonial-slider \{\
+            max-width: 900px;\
+            margin: 0 auto;\
+            position: relative;\
+        \}\
+\
+        .testimonial \{\
+            background-color: white;\
+            border-radius: 10px;\
+            padding: 3rem;\
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);\
+            text-align: center;\
+            position: relative;\
+        \}\
+\
+        .testimonial-text \{\
+            font-style: italic;\
+            color: #555;\
+            font-size: 1.1rem;\
+            margin-bottom: 2rem;\
+            position: relative;\
+        \}\
+\
+        .testimonial-text::before \{\
+            content: '"';\
+            position: absolute;\
+            top: -30px;\
+            left: -10px;\
+            font-size: 5rem;\
+            color: rgba(0, 102, 255, 0.1);\
+            font-family: serif;\
+        \}\
+\
+        .client \{\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+        \}\
+\
+        .client-image \{\
+            width: 60px;\
+            height: 60px;\
+            border-radius: 50%;\
+            margin-right: 1rem;\
+            overflow: hidden;\
+        \}\
+\
+        .client-image img \{\
+            width: 100%;\
+            height: 100%;\
+            object-fit: cover;\
+        \}\
+\
+        .client-info h4 \{\
+            font-weight: 600;\
+            margin-bottom: 0.2rem;\
+        \}\
+\
+        .client-info p \{\
+            color: #888;\
+            font-size: 0.9rem;\
+        \}\
+\
+        /* Contact Section */\
+        .contact \{\
+            padding: 8rem 5%;\
+            background-color: var(--light);\
+            position: relative;\
+        \}\
+\
+        .contact-container \{\
+            display: grid;\
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\
+            gap: 4rem;\
+        \}\
+\
+        .contact-info h3 \{\
+            font-size: 1.8rem;\
+            margin-bottom: 1.5rem;\
+        \}\
+\
+        .contact-details \{\
+            margin-bottom: 2rem;\
+        \}\
+\
+        .contact-item \{\
+            display: flex;\
+            align-items: center;\
+            margin-bottom: 1rem;\
+        \}\
+\
+        .contact-icon \{\
+            margin-right: 1rem;\
+            background: linear-gradient(to right, var(--primary), var(--secondary));\
+            -webkit-background-clip: text;\
+            color: transparent;\
+            font-size: 1.2rem;\
+        \}\
+\
+        .social-links \{\
+            display: flex;\
+            gap: 1rem;\
+        \}\
+\
+        .social-link \{\
+            width: 40px;\
+            height: 40px;\
+            border-radius: 50%;\
+            background: white;\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\
+            transition: var(--transition);\
+            text-decoration: none;\
+        \}\
+\
+        .social-link:hover \{\
+            transform: translateY(-5px);\
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);\
+        \}\
+\
+        .contact-form \{\
+            background: white;\
+            padding: 3rem;\
+            border-radius: 10px;\
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);\
+        \}\
+\
+        .form-group \{\
+            margin-bottom: 1.5rem;\
+        \}\
+\
+        .form-label \{\
+            display: block;\
+            margin-bottom: 0.5rem;\
+            color: #555;\
+            font-weight: 500;\
+        \}\
+\
+        .form-input \{\
+            width: 100%;\
+            padding: 1rem;\
+            border: 1px solid #eee;\
+            border-radius: 5px;\
+            transition: var(--transition);\
+        \}\
+\
+        .form-input:focus \{\
+            outline: none;\
+            border-color: var(--primary);\
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);\
+        \}\
+\
+        .form-textarea \{\
+            min-height: 150px;\
+            resize: vertical;\
+        \}\
+\
+        .submit-btn \{\
+            background: linear-gradient(to right, var(--primary), var(--secondary));\
+            color: white;\
+            border: none;\
+            padding: 1rem 2rem;\
+            border-radius: 50px;\
+            font-weight: 600;\
+            cursor: pointer;\
+            transition: var(--transition);\
+            width: 100%;\
+        \}\
+\
+        .submit-btn:hover \{\
+            transform: translateY(-3px);\
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.2);\
+        \}\
+\
+        /* Footer */\
+        .footer \{\
+            background-color: var(--dark);\
+            color: white;\
+            padding: 5rem 5% 2rem;\
+        \}\
+\
+        .footer-content \{\
+            display: grid;\
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\
+            gap: 4rem;\
+            margin-bottom: 3rem;\
+        \}\
+\
+        .footer-logo \{\
+            color: white;\
+            font-size: 1.8rem;\
+            font-weight: 700;\
+            margin-bottom: 1rem;\
+            text-decoration: none;\
+        \}\
+\
+        .footer-logo span \{\
+            color: var(--primary);\
+        \}\
+\
+        .footer-info p \{\
+            color: #aaa;\
+            margin-bottom: 1.5rem;\
+        \}\
+\
+        .footer-title \{\
+            font-size: 1.2rem;\
+            font-weight: 600;\
+            margin-bottom: 1.5rem;\
+            position: relative;\
+        \}\
+\
+        .footer-title::after \{\
+            content: '';\
+            position: absolute;\
+            bottom: -10px;\
+            left: 0;\
+            width: 30px;\
+            height: 2px;\
+            background: var(--primary);\
+        \}\
+\
+        .footer-links \{\
+            list-style: none;\
+        \}\
+\
+        .footer-links li \{\
+            margin-bottom: 0.8rem;\
+        \}\
+\
+        .footer-links a \{\
+            color: #aaa;\
+            text-decoration: none;\
+            transition: var(--transition);\
+        \}\
+\
+        .footer-links a:hover \{\
+            color: var(--primary);\
+            padding-left: 5px;\
+        \}\
+\
+        .copyright \{\
+            text-align: center;\
+            padding-top: 2rem;\
+            border-top: 1px solid #333;\
+            color: #777;\
+        \}\
+\
+        /* Animations for scroll */\
+        .reveal \{\
+            position: relative;\
+            opacity: 0;\
+            transform: translateY(30px);\
+            transition: all 1s ease;\
+        \}\
+\
+        .reveal.active \{\
+            opacity: 1;\
+            transform: translateY(0);\
+        \}\
+\
+        /* Responsive Styles */\
+        @media (max-width: 991px) \{\
+            .hero h1 \{\
+                font-size: 2.8rem;\
+            \}\
+\
+            .hero-image \{\
+                width: 40%;\
+            \}\
+        \}\
+\
+        @media (max-width: 768px) \{\
+            .nav-links, .cta-nav \{\
+                display: none;\
+            \}\
+\
+            .mobile-menu \{\
+                display: block;\
+            \}\
+\
+            .hero \{\
+                flex-direction: column;\
+                text-align: center;\
+                padding-top: 100px;\
+            \}\
+\
+            .hero-content \{\
+                margin-bottom: 3rem;\
+            \}\
+\
+            .hero h1 \{\
+                font-size: 2.5rem;\
+            \}\
+\
+            .hero-image \{\
+                position: relative;\
+                width: 80%;\
+                right: auto;\
+                margin-top: 2rem;\
+            \}\
+\
+            .section-header h2 \{\
+                font-size: 2rem;\
+            \}\
+        \}\
+\
+        @media (max-width: 576px) \{\
+            .hero h1 \{\
+                font-size: 2rem;\
+            \}\
+\
+            .service-card, .plan-card, .contact-form \{\
+                padding: 2rem 1.5rem;\
+            \}\
+        \}\
+    </style>\
+</head>\
+<body>\
+    <!-- Navigation -->\
+    <nav id="navbar">\
+        <a href="#" class="logo">Wex<span>ify</span></a>\
+        <div class="nav-links">\
+            <a href="#services">Services</a>\
+            <a href="#pricing">Pricing</a>\
+            <a href="#testimonials">Testimonials</a>\
+            <a href="#contact">Contact</a>\
+        </div>\
+        <div class="cta-nav">\
+            <a href="#contact" class="cta-button">Get Started</a>\
+        </div>\
+        <div class="mobile-menu">\
+            <div class="bar"></div>\
+            <div class="bar"></div>\
+            <div class="bar"></div>\
+        </div>\
+    </nav>\
+\
+    <!-- Hero Section -->\
+    <section class="hero" id="home">\
+        <div class="hero-content">\
+            <h1>The Secret to Your Brand</h1>\
+            <p>We help scale small businesses through strategic organization and management. We have innovative systems proven to work tailored to your unique vision.</p>\
+            <a href="#contact" class="cta-button">Schedule a Call With Us</a>\
+        </div>\
+        <div class="hero-shape"></div>\
+        <img src="/api/placeholder/600/500" alt="Brand Scaling Illustration" class="hero-image" />\
+    </section>\
+\
+    <!-- Services Section -->\
+    <section class="services reveal" id="services">\
+        <div class="section-header">\
+            <h2>Our Services</h2>\
+            <p>We offer comprehensive brand scaling and management solutions designed to boost your business and drive sustainable growth.</p>\
+        </div>\
+        <div class="services-grid">\
+            <div class="service-card">\
+                <div class="service-icon">&#128640;</div>\
+                <h3>Brand Strategy Development</h3>\
+                <p>We create comprehensive brand strategies that align with your business goals, target audience, and market positioning to establish a strong foundation for growth.</p>\
+                <a href="#" class="learn-more">Learn more <span>&rarr;</span></a>\
+            </div>\
+            <div class="service-card">\
+                <div class="service-icon">&#128161;</div>\
+                <h3>Digital Identity Optimization</h3>\
+                <p>Enhance your online presence with cohesive visual identity, messaging, and digital touchpoints that resonate with your audience and strengthen brand recall.</p>\
+                <a href="#" class="learn-more">Learn more <span>&rarr;</span></a>\
+            </div>\
+            <div class="service-card">\
+                <div class="service-icon">&#128200;</div>\
+                <h3>Market Expansion Planning</h3>\
+                <p>Develop strategic market entry and expansion plans backed by thorough research and analysis to identify opportunities and mitigate risks.</p>\
+                <a href="#" class="learn-more">Learn more <span>&rarr;</span></a>\
+            </div>\
+            <div class="service-card">\
+                <div class="service-icon">&#128736;</div>\
+                <h3>Brand Asset Management</h3>\
+                <p>Streamline your brand asset organization with our comprehensive management system ensuring consistency across all channels and touchpoints.</p>\
+                <a href="#" class="learn-more">Learn more <span>&rarr;</span></a>\
+            </div>\
+            <div class="service-card">\
+                <div class="service-icon">&#128172;</div>\
+                <h3>Audience Engagement</h3>\
+                <p>Create meaningful connections with your audience through strategic content planning, community building, and personalized communication strategies.</p>\
+                <a href="#" class="learn-more">Learn more <span>&rarr;</span></a>\
+            </div>\
+            <div class="service-card">\
+                <div class="service-icon">&#128202;</div>\
+                <h3>Performance Analytics</h3>\
+                <p>Gain actionable insights with our comprehensive analytics services tracking key performance indicators and measuring the impact of brand initiatives.</p>\
+                <a href="#" class="learn-more">Learn more <span>&rarr;</span></a>\
+            </div>\
+        </div>\
+    </section>\
+\
+    <!-- Pricing Section -->\
+    <section class="pricing reveal" id="pricing">\
+        <div class="section-header">\
+            <h2>Flexible Pricing Plans</h2>\
+            <p>Choose the perfect plan that aligns with your brand's finance and ambitions. We negotiate.</p>\
+        </div>\
+        <div class="pricing-tabs">\
+            <button class="pricing-tab active">Custom Packages</button>\
+        </div>\
+        <div class="pricing-plans">\
+            <div class="plan-card">\
+                <h3 class="plan-name">Startup Accelerator</h3>\
+                <p class="plan-price">Starting at custom pricing</p>\
+                <ul class="plan-features">\
+                    <li><span class="check-icon">\uc0\u10003 </span> Brand Strategy Assessment</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> New Content Agenda</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> Social Media Setup</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> Full Content Production</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> Profesionalized Ads</li>\
+                    <li><span class="x-icon">\'d7</span> Advanced Analytics</li>\
+                    <li><span class="x-icon">\'d7</span> Team Management Solution</li>\
+                </ul>\
+                <a href="#contact" class="select-plan">Contact Us</a>\
+            </div>\
+            <div class="plan-card premium-plan">\
+                <div class="popular-badge">Popular</div>\
+                <h3 class="plan-name">Growth Catalyst</h3>\
+                <p class="plan-price">Tailored to your needs</p>\
+                <ul class="plan-features">\
+                    <li><span class="check-icon">\uc0\u10003 </span> Brand Strategy Assessment</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> New Content Agenda</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> Social Media Setup</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> Full Content Production</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> Professional Ads</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> Advanced Analytics </li>\
+                    <li><span class="x-icon">\'d7</span> Team Management Solutions</li>\
+                </ul>\
+                <a href="#contact" class="select-plan">Contact Us</a>\
+            </div>\
+            <div class="plan-card">\
+                <h3 class="plan-name">Enterprise Evolution</h3>\
+                <p class="plan-price">Custom enterprise pricing</p>\
+                <ul class="plan-features">\
+                    <li><span class="check-icon">\uc0\u10003 </span> Brand Strategy Assessment</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> New Content Agenda</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> Social Media Setup</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> Full Content Production</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> Professional Ads</li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> Advanced Analytics </li>\
+                    <li><span class="check-icon">\uc0\u10003 </span> Team Management Solutions</li>\
+                </ul>\
+                <a href="#contact" class="select-plan">Contact Us</a>\
+            </div>\
+        </div>\
+    </section>\
+\
+    <!-- Testimonials Section -->\
+    <section class="testimonials reveal" id="testimonials">\
+        <div class="section-header">\
+            <h2>Client Success Stories</h2>\
+            <p>Hear from businesses that have transformed their brand presence and achieved remarkable growth with our strategies.</p>\
+        </div>\
+        <div class="testimonial-slider">\
+            <div class="testimonial">\
+                <p class="testimonial-text">Wexify completely redirected the trajectory of our business. I was skeptical at first, but Wexify prevailed and gave my business a huge boost </p>\
+                <div class="client">\
+                    <div class="client-image">\
+                        <img src="/api/placeholder/60/60" alt="Sarah Johnson" />\
+                    </div>\
+                    <div class="client-info">\
+                        <h4>Jujhar Randhawa</h4>\
+                        <p>Founder, ValleyDetailsCA</p>\
+                    </div>\
+                </div>\
+            </div>\
+            <div class="testimonial">\
+                <p class="testimonial-text">Working with Wexify was the best decision we made for our growing business. Wexify allowed us to double our sales and have mass brand exposure.</p>\
+                <div class="client">\
+                    <div class="client-image">\
+                        <img src="/api/placeholder/60/60" alt="Michael Chen" />\
+                    </div>\
+                    <div class="client-info">\
+                        <h4>Hans</h4>\
+                        <p>Founder, District5Four</p>\
+                    </div>\
+                </div>\
+            </div>\
+            <div class="testimonial">\
+                <p class="testimonial-text">Our brand was going downhill. The unique organization and management strategies cleaned us up and now its running more efficiently than ever.</p>\
+                <div class="client">\
+                    <div class="client-image">\
+                        <img src="/api/placeholder/60/60" alt="Rebecca Torres" />\
+                    </div>\
+                    <div class="client-info">\
+                        <h4>Rebecca Torres</h4>\
+                        <p>Marketing Director, CnCDetails</p>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>\
+    </section>\
+\
+    <!-- Contact Section -->\
+    <section class="contact reveal" id="contact">\
+        <div class="section-header">\
+            <h2>Let's Discuss Your Brand's Future</h2>\
+            <p>Reach out to start a conversation about how we can help scale your brand to new heights.</p>\
+        </div>\
+        <div class="contact-container">\
+            <div class="contact-info">\
+                <h3>Get in Touch</h3>\
+                <div class="contact-details">\
+                    <div class="contact-item">\
+                        <div class="contact-icon">&#128205;</div>\
+                        <p>Based in California<br>Sacramento, CA 95624</p>\
+                    </div>\
+                    <div class="contact-item">\
+                        <div class="contact-icon">&#128222;</div>\
+                        <p>To Come Soon</p>\
+                    </div>\
+                    <div class="contact-item">\
+                        <div class="contact-icon">&#9993;</div>\
+                        <p>trywexify@gmail.com</p>\
+                    </div>\
+                </div>\
+                <h3>Follow Us</h3>\
+                <div class="social-links">\
+                    <a href="#" class="social-link">&#8226;</a>\
+                    <a href="#" class="social-link">&#8226;</a>\
+                    <a href="#" class="social-link">&#8226;</a>\
+                    <a href="#" class="social-link">&#8226;</a>\
+                </div>\
+            </div>\
+            <div class="contact-form">\
+                <form id="contactForm">\
+                    <div class="form-group">\
+                        <label class="form-label" for="name">Full Name</label>\
+                        <input type="text" id="name" class="form-input" placeholder="Your name" required>\
+                    </div>\
+                    <div class="form-group">\
+                        <label class="form-label" for="email">Email Address</label>\
+                        <input type="email" id="email" class="form-input" placeholder="Your email" required>\
+                    </div>\
+                    <div class="form-group">\
+                        <label class="form-label" for="company">Company Name</label>\
+                        <input type="text" id="company" class="form-input" placeholder="Your company">\
+                    </div>\
+                    <div class="form-group">\
+                        <label class="form-label" for="message">How Can We Help?</label>\
+                        <textarea id="message" class="form-input form-textarea" placeholder="Tell us about your brand goals" required></textarea>\
+                    </div>\
+                    <button type="submit" class="submit-btn">Send Message</button>\
+                </form>\
+            </div>\
+        </div>\
+    </section>\
+\
+    <!-- Footer -->\
+    <footer class="footer">\
+        <div class="footer-content">\
+            <div class="footer-info">\
+                <a href="#" class="footer-logo">Wex<span>ify</span></a>\
+                <p>Transforming ambitious brands into market leaders through strategic growth and powerful brand management.</p>\
+            </div>\
+            <div class="footer-links-column">\
+                <h3 class="footer-title">Quick Links</h3>\
+                <ul class="footer-links">\
+                    <li><a href="#home">Home</a></li>\
+                    <li><a href="#services">Services</a></li>\
+                    <li><a href="#pricing">Pricing</a></li>\
+                    <li><a href="#testimonials">Testimonials</a></li>\
+                    <li><a href="#contact">Contact</a></li>\
+                </ul>\
+            </div>\
+            <div class="footer-links-column">\
+                <h3 class="footer-title">Services</h3>\
+                <ul class="footer-links">\
+                    <li><a href="#">Brand Strategy</a></li>\
+                    <li><a href="#">Market Expansion</a></li>\
+                    <li><a href="#">Digital Identity</a></li>\
+                    <li><a href="#">Performance Analytics</a></li>\
+                    <li><a href="#">Asset Management</a></li>\
+                </ul>\
+            </div>\
+            <div class="footer-links-column">\
+                <h3 class="footer-title">Resources</h3>\
+                <ul class="footer-links">\
+                    <li><a href="#">Case Studies</a></li>\
+                    <li><a href="#">Blog</a></li>\
+                    <li><a href="#">Brand Guide</a></li>\
+                    <li><a href="#">FAQ</a></li>\
+                    <li><a href="#">Privacy Policy</a></li>\
+                </ul>\
+            </div>\
+        </div>\
+        <div class="copyright">\
+            <p>&copy; 2025 Wexify. All rights reserved.</p>\
+        </div>\
+    </footer>\
+\
+    <script>\
+        // Navbar scroll effect\
+        window.addEventListener('scroll', function() \{\
+            const navbar = document.getElementById('navbar');\
+            if (window.scrollY > 50) \{\
+                navbar.classList.add('scrolled');\
+            \} else \{\
+                navbar.classList.remove('scrolled');\
+            \}\
+        \});\
+\
+        // Reveal elements on scroll\
+        window.addEventListener('scroll', reveal);\
+        \
+        function reveal() \{\
+            const reveals = document.querySelectorAll('.reveal');\
+            \
+            for (let i = 0; i < reveals.length; i++) \{\
+                const windowHeight = window.innerHeight;\
+                const revealTop = reveals[i].getBoundingClientRect().top;\
+                const revealPoint = 150;\
+                \
+                if (revealTop < windowHeight - revealPoint) \{\
+                    reveals[i].classList.add('active');\
+                \}\
+            \}\
+        \}\
+        \
+        // Initialize reveal on page load\
+        window.addEventListener('load', reveal);\
+        \
+        // Simple form validation\
+        const contactForm = document.getElementById('contactForm');\
+        if (contactForm) \{\
+            contactForm.addEventListener('submit', function(e) \{\
+                e.preventDefault();\
+                alert('Thank you for your message! We will get back to you shortly.');\
+                contactForm.reset();\
+            \});\
+        \}\
+        \
+        // Mobile menu toggle\
+        const mobileMenu = document.querySelector('.mobile-menu');\
+        const navLinks = document.querySelector('.nav-links');\
+        const ctaNav = document.querySelector('.cta-nav');\
+        \
+        if (mobileMenu) \{\
+            mobileMenu.addEventListener('click', function() \{\
+                mobileMenu.classList.toggle('active');\
+                \
+                if (navLinks.style.display === 'flex') \{\
+                    navLinks.style.display = 'none';\
+                    if (ctaNav) ctaNav.style.display = 'none';\
+                \} else \{\
+                    navLinks.style.display = 'flex';\
+                    navLinks.style.flexDirection = 'column';\
+                    navLinks.style.position = 'absolute';\
+                    navLinks.style.top = '80px';\
+                    navLinks.style.left = '0';\
+                    navLinks.style.width = '100%';\
+                    navLinks.style.backgroundColor = 'white';\
+                    navLinks.style.padding = '2rem';\
+                    navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';\
+                    \
+                    if (ctaNav) \{\
+                        ctaNav.style.display = 'flex';\
+                        ctaNav.style.justifyContent = 'center';\
+                        ctaNav.style.padding = '1rem 0';\
+                        ctaNav.style.position = 'absolute';\
+                        ctaNav.style.top = 'calc(80px + ' + navLinks.offsetHeight + 'px)';\
+                        ctaNav.style.left = '0';\
+                        ctaNav.style.width = '100%';\
+                        ctaNav.style.backgroundColor = 'white';\
+                    \}\
+                \}\
+            \});\
+        \}\
+        \
+        // Smooth scrolling for anchor links\
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => \{\
+            anchor.addEventListener('click', function(e) \{\
+                e.preventDefault();\
+                \
+                const target = document.querySelector(this.getAttribute('href'));\
+                if (target) \{\
+                    window.scrollTo(\{\
+                        top: target.offsetTop - 80,\
+                        behavior: 'smooth'\
+                    \});\
+                \}\
+                \
+                // Close mobile menu if open\
+                if (mobileMenu && mobileMenu.classList.contains('active')) \{\
+                    mobileMenu.click();\
+                \}\
+            \});\
+        \});\
+    </script>\
+</body>\
+</html>}
